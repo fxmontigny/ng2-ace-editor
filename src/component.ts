@@ -16,7 +16,7 @@ export class AceEditorComponent {
     _options: any = {};
     _readOnly: boolean = false;
     _theme: string = "monokai";
-    _mode: string = "html";
+    _mode: any = "html";
     _autoUpdateContent: boolean = true;
     _editor: any;
     _durationBeforeCallback: number = 0;
@@ -94,7 +94,12 @@ export class AceEditorComponent {
 
     setMode(mode: any) {
         this._mode = mode;
-        this._editor.getSession().setMode(`ace/mode/${mode}`);
+        if (typeof this._mode == 'object') {
+            this._editor.getSession().setMode(this._mode);
+        }
+        else {
+            this._editor.getSession().setMode(`ace/mode/${this._mode}`);
+        }
     }
 
     @Input() set text(text: any) {

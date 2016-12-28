@@ -42,7 +42,7 @@ import { Component } from '@angular/core';
   template: `
   <div ace-editor
        [text]="text"
-       [mode]="'sql'"
+       [mode]="'sql'" //string or object
        [theme]="'eclipse'"
        [options]="options"
        [readOnly]="false"

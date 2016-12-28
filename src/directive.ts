@@ -13,7 +13,7 @@ export class AceEditorDirective {
     _options: any = {};
     _readOnly: boolean = false;
     _theme: string = "monokai";
-    _mode: string = "html";
+    _mode: any = "html";
     _autoUpdateContent: boolean = true;
     editor: any;
     oldText: any;
@@ -29,7 +29,7 @@ export class AceEditorDirective {
     init() {
         this.editor.setOptions(this._options || {});
         this.editor.setTheme(`ace/theme/${this._theme}`);
-        this.editor.getSession().setMode(`ace/mode/${this._mode}`);
+        this.setMode(this._mode);
         this.editor.setReadOnly(this._readOnly);
     }
 
@@ -59,8 +59,17 @@ export class AceEditorDirective {
     }
 
     @Input() set mode(mode: any) {
+        this.setMode(mode);
+    }
+
+    setMode(mode: any) {
         this._mode = mode;
-        this.editor.getSession().setMode(`ace/mode/${mode}`);
+        if (typeof this._mode == 'object') {
+            this.editor.getSession().setMode(this._mode);
+        }
+        else {
+            this.editor.getSession().setMode(`ace/mode/${this._mode}`);
+        }
     }
 
     @Input() set text(text: any) {

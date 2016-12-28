@@ -34,7 +34,7 @@ System.registerDynamic("src/directive", ["@angular/core", "brace", "brace/theme/
         AceEditorDirective.prototype.init = function () {
             this.editor.setOptions(this._options || {});
             this.editor.setTheme("ace/theme/" + this._theme);
-            this.editor.getSession().setMode("ace/mode/" + this._mode);
+            this.setMode(this._mode);
             this.editor.setReadOnly(this._readOnly);
         };
         AceEditorDirective.prototype.initEvents = function () {
@@ -72,12 +72,19 @@ System.registerDynamic("src/directive", ["@angular/core", "brace", "brace/theme/
         });
         Object.defineProperty(AceEditorDirective.prototype, "mode", {
             set: function (mode) {
-                this._mode = mode;
-                this.editor.getSession().setMode("ace/mode/" + mode);
+                this.setMode(mode);
             },
             enumerable: true,
             configurable: true
         });
+        AceEditorDirective.prototype.setMode = function (mode) {
+            this._mode = mode;
+            if (typeof this._mode == 'object') {
+                this.editor.getSession().setMode(this._mode);
+            } else {
+                this.editor.getSession().setMode("ace/mode/" + this._mode);
+            }
+        };
         Object.defineProperty(AceEditorDirective.prototype, "text", {
             set: function (text) {
                 if (text == null) text = "";
@@ -219,7 +226,11 @@ System.registerDynamic("src/component", ["@angular/core", "brace", "brace/theme/
         });
         AceEditorComponent.prototype.setMode = function (mode) {
             this._mode = mode;
-            this._editor.getSession().setMode("ace/mode/" + mode);
+            if (typeof this._mode == 'object') {
+                this._editor.getSession().setMode(this._mode);
+            } else {
+                this._editor.getSession().setMode("ace/mode/" + this._mode);
+            }
         };
         Object.defineProperty(AceEditorComponent.prototype, "text", {
             set: function (text) {

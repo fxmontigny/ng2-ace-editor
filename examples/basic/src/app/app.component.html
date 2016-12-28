@@ -1,7 +1,19 @@
-<h1>
-  SQL
-</h1>
-<ace-editor [text]="initialSql"
-            (textChanged)="editedQuery.Query=$event; log(editedQuery.Query)"
-            style="min-height: 200px; width:100%; overflow: auto;"
-            [mode]="'sql'">
+<style>
+  .aceEditorDirective {
+    margin-top: 50px;
+    min-height: 200px;
+    width: 100%;
+    overflow: auto;
+  }
+</style>
+<div>
+  <h1>
+    Basic
+  </h1>
+  <ace-editor [text]="initialSql"
+              (textChanged)="editedQuery.Query=$event; log(editedQuery.Query)"
+              style="min-height: 200px; width:100%; overflow: auto;"
+              [mode]="'sql'"></ace-editor>
+  <div ace-editor [text]="initialSql" class="aceEditorDirective"
+       [mode]="'sql'"></div>
+</div>

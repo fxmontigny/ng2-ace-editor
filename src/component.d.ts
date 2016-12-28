@@ -8,7 +8,7 @@ export declare class AceEditorComponent {
     _options: any;
     _readOnly: boolean;
     _theme: string;
-    _mode: string;
+    _mode: any;
     _autoUpdateContent: boolean;
     _editor: any;
     _durationBeforeCallback: number;
