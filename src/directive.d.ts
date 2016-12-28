@@ -18,6 +18,7 @@ export declare class AceEditorDirective {
     readOnly: any;
     theme: any;
     mode: any;
+    setMode(mode: any): void;
     text: any;
     autoUpdateContent: any;
     readonly aceEditor: any;

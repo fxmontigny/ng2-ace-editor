@@ -1,6 +1,6 @@
 {
   "name": "ng2-ace-editor",
-  "version": "0.1.6",
+  "version": "0.1.4",
   "description": "Ace editor integration with typescript for angular 2.",
   "main": "ng2-ace-editor.js",
   "typings": "ng2-ace-editor.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckiffel/ng2-ace-editor.git"
+    "url": "git+https://github.com/fxmontigny/ng2-ace-editor.git"
   },
   "keywords": [
     "ng2",
@@ -24,13 +24,13 @@
     "ng2-ace",
     "angular2-ace"
   ],
-  "author": "Christophe KIFFEL <christophe.kiffel@gmail.com>",
+  "author": "François-Xavier Montigny <fxaviermontigny@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ckiffel/ng2-ace-editor/issues"
+    "url": "https://github.com/fxmontigny/ng2-ace-editor/issues"
   },
   "dependencies": {
-    "ace-builds": "^1.2.7",
+    "ace-builds": "^1.2.5",
     "brace": "^0.9.0"
   },
   "peerDependencies": {

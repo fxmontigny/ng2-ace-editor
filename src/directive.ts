@@ -29,7 +29,7 @@ export class AceEditorDirective {
     init() {
         this.editor.setOptions(this._options || {});
         this.editor.setTheme(`ace/theme/${this._theme}`);
-        this.mode = this._mode;
+        this.setMode(this._mode);
         this.editor.setReadOnly(this._readOnly);
     }
 
@@ -59,6 +59,10 @@ export class AceEditorDirective {
     }
 
     @Input() set mode(mode: any) {
+        this.setMode(mode);
+    }
+
+    setMode(mode: any) {
         this._mode = mode;
         if (typeof this._mode == 'object') {
             this.editor.getSession().setMode(this._mode);
