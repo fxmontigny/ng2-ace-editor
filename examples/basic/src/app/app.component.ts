@@ -7,6 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   initialSql = "SELECT * FROM tabs;";
+  session = "sql";
   editedQuery: any = {
     Query: ""
   }
