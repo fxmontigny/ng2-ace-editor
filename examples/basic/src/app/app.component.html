@@ -1,30 +1,30 @@
-<div>
-    <h1>Basic</h1>
-    <ace-editor [text]="content"
-                (textChanged)="onRuleChange($event)"
-                [autoUpdateContent]="true"
-                style="min-height: 200px; width:100%; overflow: auto;"
-                [mode]="'sql'"></ace-editor>
-    <div ace-editor [text]="content" class="aceEditorDirective"
-         [mode]="'sql'"></div>
-    <h2>Highlight</h2>
-    <ace-editor #highlight [text]="content"
-                [mode]="'sql'"
-                style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
-    <h2>Auto update</h2>
-    <ace-editor [(text)]="contentAutoUpdate"
-                [mode]="'sql'"
-                style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
-    <div ace-editor [(text)]="contentAutoUpdate"
-         [mode]="'sql'"
-         style="min-height: 200px; width:100%; overflow: auto;"></div>
-    <h1>Auto height</h1>
-    <ace-editor #editorInfinity [text]="content"
-                [options]="{maxLines: 'Infinity'}"
-                style="min-height: 50px; width:100%;"></ace-editor>
-    <h1>NgModel</h1>
-    <ace-editor [(text)]="myCode"
-                style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
-    <ace-editor [(text)]="myCode"
-                style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
-</div>
+  <h1>
+    Basic
+  </h1>
+  <ace-editor [text]="content"
+              (textChanged)="onRuleChange($event)"
+              [autoUpdateContent]="true"
+              style="min-height: 200px; width:100%; overflow: auto;"
+              [mode]="'sql'"></ace-editor>
+  <div ace-editor [text]="content" class="aceEditorDirective"
+       [mode]="'sql'"></div>
+  <h2>Highlight</h2>
+  <ace-editor #highlight [text]="content"
+              [mode]="'sql'"
+              style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
+  <h2>Auto update</h2>
+  <ace-editor [(text)]="contentAutoUpdate"
+              [mode]="'sql'"
+              style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
+  <div ace-editor [(text)]="contentAutoUpdate"
+       [mode]="'sql'"
+       style="min-height: 200px; width:100%; overflow: auto;"></div>
+  <h1>Auto height</h1>
+  <ace-editor #editorInfinity [text]="content"
+              [options]="{maxLines: 'Infinity'}"
+              style="min-height: 50px; width:100%;"></ace-editor>
+  <h1>NgModel</h1>
+  <ace-editor [(text)]="myCode"
+              style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
+  <ace-editor [(text)]="myCode"
+              style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
