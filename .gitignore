@@ -16,3 +16,7 @@ typings
 .DS_Store
 .idea/
 *.lock
+
+# Project
+*.ngsummary.json
+*.ngfactory.ts
