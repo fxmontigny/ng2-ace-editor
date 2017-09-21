@@ -14,9 +14,6 @@
       ],
       "@angular/forms": [
         "node_modules/@angular/forms"
-      ],
-      "rxjs/*": [
-        "node_modules/rxjs/*"
       ]
     },
     "rootDir": ".",

@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Output, ElementRef, Input, forwardRef} from '@angular/core';
-import {NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, EventEmitter, Output, ElementRef, Input, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import 'brace';
 import 'brace/theme/monokai';
 import 'brace/mode/html';
@@ -21,8 +21,8 @@ var AceEditorComponent = /** @class */ (function () {
         };
         var el = elementRef.nativeElement;
         this._editor = ace["edit"](el);
+        this._editor.$blockScrolling = Infinity;
     }
-
     AceEditorComponent.prototype.ngOnInit = function () {
         this.init();
         this.initEvents();
@@ -35,12 +35,8 @@ var AceEditorComponent = /** @class */ (function () {
     };
     AceEditorComponent.prototype.initEvents = function () {
         var _this = this;
-        this._editor.on('change', function () {
-            return _this.updateText();
-        });
-        this._editor.on('paste', function () {
-            return _this.updateText();
-        });
+        this._editor.on('change', function () { return _this.updateText(); });
+        this._editor.on('paste', function () { return _this.updateText(); });
     };
     AceEditorComponent.prototype.updateText = function () {
         var newVal = this._editor.getValue(), that = this;
@@ -181,41 +177,35 @@ var AceEditorComponent = /** @class */ (function () {
         return this._editor;
     };
     AceEditorComponent.decorators = [
-        {
-            type: Component, args: [{
-            selector: 'ace-editor',
-            template: '',
-            styles: [':host { display:block;width:100%; }'],
-            providers: [{
-                provide: NG_VALUE_ACCESSOR,
-                useExisting: forwardRef(function () {
-                    return AceEditorComponent;
-                }),
-                multi: true
-            }]
-        },]
-        },
+        { type: Component, args: [{
+                    selector: 'ace-editor',
+                    template: '',
+                    styles: [':host { display:block;width:100%; }'],
+                    providers: [{
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(function () { return AceEditorComponent; }),
+                            multi: true
+                        }]
+                },] },
     ];
     /** @nocollapse */
-    AceEditorComponent.ctorParameters = function () {
-        return [
-            {type: ElementRef,},
-        ];
-    };
+    AceEditorComponent.ctorParameters = function () { return [
+        { type: ElementRef, },
+    ]; };
     AceEditorComponent.propDecorators = {
-        'textChanged': [{type: Output},],
-        'textChange': [{type: Output},],
-        'style': [{type: Input},],
-        'options': [{type: Input},],
-        'readOnly': [{type: Input},],
-        'theme': [{type: Input},],
-        'mode': [{type: Input},],
-        'value': [{type: Input},],
-        'text': [{type: Input},],
-        'autoUpdateContent': [{type: Input},],
-        'durationBeforeCallback': [{type: Input},],
+        'textChanged': [{ type: Output },],
+        'textChange': [{ type: Output },],
+        'style': [{ type: Input },],
+        'options': [{ type: Input },],
+        'readOnly': [{ type: Input },],
+        'theme': [{ type: Input },],
+        'mode': [{ type: Input },],
+        'value': [{ type: Input },],
+        'text': [{ type: Input },],
+        'autoUpdateContent': [{ type: Input },],
+        'durationBeforeCallback': [{ type: Input },],
     };
     return AceEditorComponent;
 }());
-export {AceEditorComponent};
+export { AceEditorComponent };
 //# sourceMappingURL=component.js.map

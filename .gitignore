@@ -20,3 +20,5 @@ typings
 # Project
 *.ngsummary.json
 *.ngfactory.ts
+src/*.d.ts
+src/*.js

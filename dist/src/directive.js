@@ -1,4 +1,4 @@
-import {Directive, EventEmitter, Output, ElementRef, Input} from '@angular/core';
+import { Directive, EventEmitter, Output, ElementRef, Input } from '@angular/core';
 import 'brace';
 import 'brace/theme/monokai';
 import 'brace/mode/html';
@@ -15,8 +15,8 @@ var AceEditorDirective = /** @class */ (function () {
         this._text = "";
         var el = elementRef.nativeElement;
         this.editor = ace["edit"](el);
+        this.editor.$blockScrolling = Infinity;
     }
-
     AceEditorDirective.prototype.ngOnInit = function () {
         this.init();
         this.initEvents();
@@ -30,12 +30,8 @@ var AceEditorDirective = /** @class */ (function () {
     AceEditorDirective.prototype.initEvents = function () {
         var _this = this;
         var me = this;
-        me.editor.on('change', function () {
-            return _this.updateText();
-        });
-        me.editor.on('paste', function () {
-            return _this.updateText();
-        });
+        me.editor.on('change', function () { return _this.updateText(); });
+        me.editor.on('paste', function () { return _this.updateText(); });
     };
     AceEditorDirective.prototype.updateText = function () {
         var newVal = this.editor.getValue(), that = this;
@@ -149,30 +145,26 @@ var AceEditorDirective = /** @class */ (function () {
         configurable: true
     });
     AceEditorDirective.decorators = [
-        {
-            type: Directive, args: [{
-            selector: '[ace-editor]'
-        },]
-        },
+        { type: Directive, args: [{
+                    selector: '[ace-editor]'
+                },] },
     ];
     /** @nocollapse */
-    AceEditorDirective.ctorParameters = function () {
-        return [
-            {type: ElementRef,},
-        ];
-    };
+    AceEditorDirective.ctorParameters = function () { return [
+        { type: ElementRef, },
+    ]; };
     AceEditorDirective.propDecorators = {
-        'textChanged': [{type: Output},],
-        'textChange': [{type: Output},],
-        'options': [{type: Input},],
-        'readOnly': [{type: Input},],
-        'theme': [{type: Input},],
-        'mode': [{type: Input},],
-        'text': [{type: Input},],
-        'autoUpdateContent': [{type: Input},],
-        'durationBeforeCallback': [{type: Input},],
+        'textChanged': [{ type: Output },],
+        'textChange': [{ type: Output },],
+        'options': [{ type: Input },],
+        'readOnly': [{ type: Input },],
+        'theme': [{ type: Input },],
+        'mode': [{ type: Input },],
+        'text': [{ type: Input },],
+        'autoUpdateContent': [{ type: Input },],
+        'durationBeforeCallback': [{ type: Input },],
     };
     return AceEditorDirective;
 }());
-export {AceEditorDirective};
+export { AceEditorDirective };
 //# sourceMappingURL=directive.js.map

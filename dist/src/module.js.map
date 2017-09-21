@@ -1,13 +1,1 @@
-{
-  "version": 3,
-  "sources": [
-    "../../src/module.ts"
-  ],
-  "names": [],
-  "mappings": "AAAA,OAAO,EAAE,QAAA,EAAS,MAAO,eAAA,CAAgB;AAEzC,OAAO,EAAE,kBAAA,EAAmB,MAAO,aAAA,CAAc;AACjD,OAAO,EAAE,kBAAA,EAAmB,MAAO,aAAA,CAAc;AAGjD;IAAA;IAmBA,CAAC;IAjBM,0BAAU,GAA0B;QAC3C,EAAE,IAAI,EAAE,QAAQ,EAAE,IAAI,EAAE,CAAC;oBACrB,YAAY,EAAE;wBACV,kBAAkB;wBAClB,kBAAkB;qBACrB;oBACD,OAAO,EAAE,EAAE;oBACX,SAAS,EAAE,EAAE;oBACb,OAAO,EAAE;wBACL,kBAAkB;wBAClB,kBAAkB;qBACrB;iBACJ,EAAG,EAAE;KACL,CAAC;IACF,kBAAkB;IACX,8BAAc,GAAmE,cAAM,OAAA,EAC7F,EAD6F,CAC7F,CAAC;IACF,sBAAC;CAnBD,AAmBC,IAAA;SAnBY,eAAe",
-  "file": "module.js",
-  "sourceRoot": "",
-  "sourcesContent": [
-    "import { NgModule } from '@angular/core';\r\n\r\nimport { AceEditorComponent } from './component';\r\nimport { AceEditorDirective } from './directive';\r\n\r\n\r\nexport class AceEditorModule {\r\n\r\nstatic decorators: DecoratorInvocation[] = [\n{ type: NgModule, args: [{\r\n    declarations: [\r\n        AceEditorComponent,\r\n        AceEditorDirective\r\n    ],\r\n    imports: [],\r\n    providers: [],\r\n    exports: [\r\n        AceEditorComponent,\r\n        AceEditorDirective\r\n    ]\r\n}, ] },\n];\n/** @nocollapse */\nstatic ctorParameters: () => ({type: any, decorators?: DecoratorInvocation[]}|null)[] = () => [\n];\n}\ninterface DecoratorInvocation {\n  type: Function;\n  args?: any[];\n}\n"
-  ]
-}
+{"version":3,"sources":["../../src/module.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAA,EAAS,MAAO,eAAA,CAAgB;AAEzC,OAAO,EAAE,kBAAA,EAAmB,MAAO,aAAA,CAAc;AACjD,OAAO,EAAE,kBAAA,EAAmB,MAAO,aAAA,CAAc;AAGjD;IAAA;IAmBA,CAAC;IAjBM,0BAAU,GAA0B;QAC3C,EAAE,IAAI,EAAE,QAAQ,EAAE,IAAI,EAAE,CAAC;oBACrB,YAAY,EAAE;wBACV,kBAAkB;wBAClB,kBAAkB;qBACrB;oBACD,OAAO,EAAE,EAAE;oBACX,SAAS,EAAE,EAAE;oBACb,OAAO,EAAE;wBACL,kBAAkB;wBAClB,kBAAkB;qBACrB;iBACJ,EAAG,EAAE;KACL,CAAC;IACF,kBAAkB;IACX,8BAAc,GAAmE,cAAM,OAAA,EAC7F,EAD6F,CAC7F,CAAC;IACF,sBAAC;CAnBD,AAmBC,IAAA;SAnBY,eAAe","file":"module.js","sourceRoot":"","sourcesContent":["import { NgModule } from '@angular/core';\r\n\r\nimport { AceEditorComponent } from './component';\r\nimport { AceEditorDirective } from './directive';\r\n\r\n\r\nexport class AceEditorModule {\r\n\r\nstatic decorators: DecoratorInvocation[] = [\n{ type: NgModule, args: [{\r\n    declarations: [\r\n        AceEditorComponent,\r\n        AceEditorDirective\r\n    ],\r\n    imports: [],\r\n    providers: [],\r\n    exports: [\r\n        AceEditorComponent,\r\n        AceEditorDirective\r\n    ]\r\n}, ] },\n];\n/** @nocollapse */\nstatic ctorParameters: () => ({type: any, decorators?: DecoratorInvocation[]}|null)[] = () => [\n];\n}\ninterface DecoratorInvocation {\n  type: Function;\n  args?: any[];\n}\n"]}
