@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Output, ElementRef, Input, forwardRef, OnInit} from '@angular/core';
-import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
+import { Component, EventEmitter, Output, ElementRef, Input, forwardRef, OnInit } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import 'brace';
 import 'brace/theme/monokai';
 import 'brace/mode/html';
@@ -34,6 +34,7 @@ export class AceEditorComponent implements ControlValueAccessor, OnInit {
     constructor(elementRef: ElementRef) {
         let el = elementRef.nativeElement;
         this._editor = ace["edit"](el);
+        this._editor.$blockScrolling = Infinity;
     }
 
     ngOnInit() {
@@ -69,7 +70,7 @@ export class AceEditorComponent implements ControlValueAccessor, OnInit {
                     clearTimeout(this.timeoutSaving);
                 }
 
-                this.timeoutSaving = setTimeout(function () {
+                this.timeoutSaving = setTimeout(function() {
                     that._text = newVal;
                     that.textChange.emit(newVal);
                     that.textChanged.emit(newVal);

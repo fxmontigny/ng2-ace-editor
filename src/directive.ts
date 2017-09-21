@@ -1,4 +1,4 @@
-import {Directive, EventEmitter, Output, ElementRef, Input, OnInit} from '@angular/core';
+import { Directive, EventEmitter, Output, ElementRef, Input, OnInit } from '@angular/core';
 import 'brace';
 import 'brace/theme/monokai';
 import 'brace/mode/html';
@@ -25,6 +25,7 @@ export class AceEditorDirective implements OnInit {
     constructor(elementRef: ElementRef) {
         let el = elementRef.nativeElement;
         this.editor = ace["edit"](el);
+        this.editor.$blockScrolling = Infinity;
     }
 
     ngOnInit() {
@@ -61,7 +62,7 @@ export class AceEditorDirective implements OnInit {
                     clearTimeout(this.timeoutSaving);
                 }
 
-                this.timeoutSaving = setTimeout(function () {
+                this.timeoutSaving = setTimeout(function() {
                     that._text = newVal;
                     that.textChange.emit(newVal);
                     that.textChanged.emit(newVal);
