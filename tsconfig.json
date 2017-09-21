@@ -1,28 +1,39 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es5",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
+    "baseUrl": ".",
     "declaration": true,
+    "stripInternal": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "es2015",
     "moduleResolution": "node",
-    "types": [
-      "hammerjs",
-      "jasmine",
-      "node"
-    ],
-    "lib": ["es2015", "dom"]
+    "paths": {
+      "@angular/core": [
+        "node_modules/@angular/core"
+      ],
+      "@angular/forms": [
+        "node_modules/@angular/forms"
+      ],
+      "rxjs/*": [
+        "node_modules/rxjs/*"
+      ]
+    },
+    "rootDir": ".",
+    "outDir": "dist",
+    "sourceMap": true,
+    "inlineSources": true,
+    "target": "es5",
+    "skipLibCheck": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ]
   },
   "files": [
-    "ng2-ace-editor.ts",
-    "src/directive.ts",
-    "src/component.ts"
+    "index.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "bundles"
-  ]
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true
+  }
 }

@@ -11,7 +11,7 @@ Ace editor integration with typescript for angular 2.
 > Minimal
 
 ```js
-//add "AceEditorDirective" to your modules list
+//import { AceEditorModule } from 'ng2-ace-editor';
 
 import { Component } from '@angular/core';
 
@@ -30,9 +30,6 @@ export class MyComponent {
 > Complete
 
 ```js
-//add "AceEditorDirective" to your modules list
-//import { AceEditorDirective } from 'ng2-ace-editor';
-
 import { Component } from '@angular/core';
 
 //to use theme "eclipse"
@@ -66,9 +63,6 @@ export class MyComponent {
 # Use Component
 
 ```js
-//add "AceEditorComponent" to your modules list
-//import { AceEditorComponent } from 'ng2-ace-editor';
-
 import {Component, ViewChild} from '@angular/core';
 
 //to use theme eclipse
@@ -104,22 +98,8 @@ export class AceCmp {
 }
 ```
 
-# Use AOT (thx Geschan)
-```js
-// other imports
-import { AceEditorModule } from 'ng2-ace-editor';
 
-@NgModule({
-  imports: [
-    // ...
-    AceEditorModule
-  ],
-  declarations: [  ],
-  providers: [  ]
-})
-export class AppModule {
-}
-```
-
-# Used by
-[caravel.design](https://www.caravel.design) - [example](https://app.caravel.design/p/58/sample-user-research/s/316/ab-testing/codeSample/184/button-a)
+# Power by
+[Use Code](http://www.use-code.com)
+  
+[example with caravel](https://app.caravel.design/p/58/sample-user-research/s/316/ab-testing/codeSample/184/button-a)

@@ -1,9 +1,4 @@
-"use strict";
-var directive_1 = require('./directive');
-exports.AceEditorDirective = directive_1.AceEditorDirective;
-var component_1 = require('./component');
-exports.AceEditorComponent = component_1.AceEditorComponent;
-var module_1 = require('./module');
-exports.AceEditorModule = module_1.AceEditorModule;
-ace.config.set('basePath', 'node_modules/ace-builds/src-min/');
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLDBCQUFpQyxhQUFhLENBQUMsQ0FBQTtBQUl0QiwwQkFBa0I7QUFIM0MsMEJBQWlDLGFBQWEsQ0FBQyxDQUFBO0FBR0YsMEJBQWtCO0FBRi9ELHVCQUE4QixVQUFVLENBQUMsQ0FBQTtBQUVqQyx1QkFBZTtBQUd2QixHQUFHLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxVQUFVLEVBQUUsa0NBQWtDLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7QWNlRWRpdG9yRGlyZWN0aXZlfSBmcm9tICcuL2RpcmVjdGl2ZSc7XHJcbmltcG9ydCB7QWNlRWRpdG9yQ29tcG9uZW50fSBmcm9tICcuL2NvbXBvbmVudCc7XHJcbmltcG9ydCB7QWNlRWRpdG9yTW9kdWxlfSBmcm9tICcuL21vZHVsZSc7XHJcblxyXG5leHBvcnQge0FjZUVkaXRvck1vZHVsZSwgQWNlRWRpdG9yRGlyZWN0aXZlLCBBY2VFZGl0b3JDb21wb25lbnR9O1xyXG5cclxuZGVjbGFyZSB2YXIgYWNlOiBhbnk7XHJcbmFjZS5jb25maWcuc2V0KCdiYXNlUGF0aCcsICdub2RlX21vZHVsZXMvYWNlLWJ1aWxkcy9zcmMtbWluLycpO1xyXG4iXX0=
+export {AceEditorDirective} from './src/directive';
+export {AceEditorComponent} from './src/component';
+export {AceEditorModule} from './src/module';
+//# sourceMappingURL=index.js.map
