@@ -101,5 +101,3 @@ export class AceCmp {
 
 # Power by
 [Use Code](http://www.use-code.com)
-  
-[example with caravel](https://app.caravel.design/p/58/sample-user-research/s/316/ab-testing/codeSample/184/button-a)
