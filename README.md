@@ -6,6 +6,20 @@ Ace editor integration with typescript for angular 2.
 # Install
 `npm i -S ng2-ace-editor`
 
+##### Load the module for your app:
+
+```javascript
+import { AceEditorModule } from 'ng2-ace-editor';
+
+@NgModule({
+  ...
+  imports: [
+    ...
+    AceEditorModule
+  ]
+})
+```
+
 # Use directive
 
 > Minimal
