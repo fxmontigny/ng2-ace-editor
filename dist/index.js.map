@@ -1,13 +1,1 @@
-{
-  "version": 3,
-  "file": "index.js",
-  "sourceRoot": "",
-  "sources": [
-    "../index.ts"
-  ],
-  "names": [],
-  "mappings": "AAAA,OAAO,EAAC,kBAAkB,EAAC,MAAM,iBAAiB,CAAC;AACnD,OAAO,EAAC,kBAAkB,EAAC,MAAM,iBAAiB,CAAC;AACnD,OAAO,EAAC,eAAe,EAAC,MAAM,cAAc,CAAC",
-  "sourcesContent": [
-    "export {AceEditorDirective} from './src/directive';\r\nexport {AceEditorComponent} from './src/component';\r\nexport {AceEditorModule} from './src/module';\r\n"
-  ]
-}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,kBAAkB,EAAC,MAAM,iBAAiB,CAAC;AACnD,OAAO,EAAC,kBAAkB,EAAC,MAAM,iBAAiB,CAAC;AACnD,OAAO,EAAC,eAAe,EAAC,MAAM,cAAc,CAAC","sourcesContent":["export {AceEditorDirective} from './src/directive';\nexport {AceEditorComponent} from './src/component';\nexport {AceEditorModule} from './src/module';\n"]}

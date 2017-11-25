@@ -1,10 +1,24 @@
-import {Component, EventEmitter, Output, ElementRef, Input, forwardRef, OnInit} from "@angular/core";
-import {NG_VALUE_ACCESSOR, ControlValueAccessor} from "@angular/forms";
+import { Component, EventEmitter, Output, ElementRef, Input, forwardRef } from "@angular/core";
+import { NG_VALUE_ACCESSOR } from "@angular/forms";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
-var AceEditorComponent = /** @class */ (function () {
+var AceEditorComponent = (function () {
     function AceEditorComponent(elementRef) {
+        this.textChanged = new EventEmitter();
+        this.textChange = new EventEmitter();
+        this.style = {};
+        this._options = {};
+        this._readOnly = false;
+        this._theme = "monokai";
+        this._mode = "html";
+        this._autoUpdateContent = true;
+        this._durationBeforeCallback = 0;
+        this._text = "";
+        this._onChange = function (_) {
+        };
+        this._onTouched = function () {
+        };
         var el = elementRef.nativeElement;
         this._editor = ace["edit"](el);
         this._editor.$blockScrolling = Infinity;
@@ -159,6 +173,35 @@ var AceEditorComponent = /** @class */ (function () {
     };
     AceEditorComponent.prototype.getEditor = function () {
         return this._editor;
+    };
+    AceEditorComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'ace-editor',
+                    template: '',
+                    styles: [':host { display:block;width:100%; }'],
+                    providers: [{
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(function () { return AceEditorComponent; }),
+                            multi: true
+                        }]
+                },] },
+    ];
+    /** @nocollapse */
+    AceEditorComponent.ctorParameters = function () { return [
+        { type: ElementRef, },
+    ]; };
+    AceEditorComponent.propDecorators = {
+        "textChanged": [{ type: Output },],
+        "textChange": [{ type: Output },],
+        "style": [{ type: Input },],
+        "options": [{ type: Input },],
+        "readOnly": [{ type: Input },],
+        "theme": [{ type: Input },],
+        "mode": [{ type: Input },],
+        "value": [{ type: Input },],
+        "text": [{ type: Input },],
+        "autoUpdateContent": [{ type: Input },],
+        "durationBeforeCallback": [{ type: Input },],
     };
     return AceEditorComponent;
 }());

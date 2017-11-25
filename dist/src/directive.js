@@ -1,9 +1,18 @@
-import {Directive, EventEmitter, Output, ElementRef, Input, OnInit} from "@angular/core";
+import { Directive, EventEmitter, Output, ElementRef, Input } from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
-var AceEditorDirective = /** @class */ (function () {
+var AceEditorDirective = (function () {
     function AceEditorDirective(elementRef) {
+        this.textChanged = new EventEmitter();
+        this.textChange = new EventEmitter();
+        this._options = {};
+        this._readOnly = false;
+        this._theme = "monokai";
+        this._mode = "html";
+        this._autoUpdateContent = true;
+        this._durationBeforeCallback = 0;
+        this._text = "";
         var el = elementRef.nativeElement;
         this.editor = ace["edit"](el);
         this.editor.$blockScrolling = Infinity;
@@ -132,6 +141,26 @@ var AceEditorDirective = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    AceEditorDirective.decorators = [
+        { type: Directive, args: [{
+                    selector: '[ace-editor]'
+                },] },
+    ];
+    /** @nocollapse */
+    AceEditorDirective.ctorParameters = function () { return [
+        { type: ElementRef, },
+    ]; };
+    AceEditorDirective.propDecorators = {
+        "textChanged": [{ type: Output },],
+        "textChange": [{ type: Output },],
+        "options": [{ type: Input },],
+        "readOnly": [{ type: Input },],
+        "theme": [{ type: Input },],
+        "mode": [{ type: Input },],
+        "text": [{ type: Input },],
+        "autoUpdateContent": [{ type: Input },],
+        "durationBeforeCallback": [{ type: Input },],
+    };
     return AceEditorDirective;
 }());
 export { AceEditorDirective };

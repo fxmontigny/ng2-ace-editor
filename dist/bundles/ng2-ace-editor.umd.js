@@ -4,8 +4,17 @@
 	(factory((global.ng = global.ng || {}, global.ng.ng2aceeditor = {}),global.ng.core,null,null,null,global.ng.forms));
 }(this, (function (exports,core,brace,monokai,html,forms) { 'use strict';
 
-var AceEditorDirective = /** @class */ (function () {
+var AceEditorDirective = (function () {
     function AceEditorDirective(elementRef) {
+        this.textChanged = new core.EventEmitter();
+        this.textChange = new core.EventEmitter();
+        this._options = {};
+        this._readOnly = false;
+        this._theme = "monokai";
+        this._mode = "html";
+        this._autoUpdateContent = true;
+        this._durationBeforeCallback = 0;
+        this._text = "";
         var el = elementRef.nativeElement;
         this.editor = ace["edit"](el);
         this.editor.$blockScrolling = Infinity;
@@ -134,11 +143,45 @@ var AceEditorDirective = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    AceEditorDirective.decorators = [
+        { type: core.Directive, args: [{
+                    selector: '[ace-editor]'
+                },] },
+    ];
+    /** @nocollapse */
+    AceEditorDirective.ctorParameters = function () { return [
+        { type: core.ElementRef, },
+    ]; };
+    AceEditorDirective.propDecorators = {
+        "textChanged": [{ type: core.Output },],
+        "textChange": [{ type: core.Output },],
+        "options": [{ type: core.Input },],
+        "readOnly": [{ type: core.Input },],
+        "theme": [{ type: core.Input },],
+        "mode": [{ type: core.Input },],
+        "text": [{ type: core.Input },],
+        "autoUpdateContent": [{ type: core.Input },],
+        "durationBeforeCallback": [{ type: core.Input },],
+    };
     return AceEditorDirective;
 }());
 
-var AceEditorComponent = /** @class */ (function () {
+var AceEditorComponent = (function () {
     function AceEditorComponent(elementRef) {
+        this.textChanged = new core.EventEmitter();
+        this.textChange = new core.EventEmitter();
+        this.style = {};
+        this._options = {};
+        this._readOnly = false;
+        this._theme = "monokai";
+        this._mode = "html";
+        this._autoUpdateContent = true;
+        this._durationBeforeCallback = 0;
+        this._text = "";
+        this._onChange = function (_) {
+        };
+        this._onTouched = function () {
+        };
         var el = elementRef.nativeElement;
         this._editor = ace["edit"](el);
         this._editor.$blockScrolling = Infinity;
@@ -294,12 +337,55 @@ var AceEditorComponent = /** @class */ (function () {
     AceEditorComponent.prototype.getEditor = function () {
         return this._editor;
     };
+    AceEditorComponent.decorators = [
+        { type: core.Component, args: [{
+                    selector: 'ace-editor',
+                    template: '',
+                    styles: [':host { display:block;width:100%; }'],
+                    providers: [{
+                            provide: forms.NG_VALUE_ACCESSOR,
+                            useExisting: core.forwardRef(function () { return AceEditorComponent; }),
+                            multi: true
+                        }]
+                },] },
+    ];
+    /** @nocollapse */
+    AceEditorComponent.ctorParameters = function () { return [
+        { type: core.ElementRef, },
+    ]; };
+    AceEditorComponent.propDecorators = {
+        "textChanged": [{ type: core.Output },],
+        "textChange": [{ type: core.Output },],
+        "style": [{ type: core.Input },],
+        "options": [{ type: core.Input },],
+        "readOnly": [{ type: core.Input },],
+        "theme": [{ type: core.Input },],
+        "mode": [{ type: core.Input },],
+        "value": [{ type: core.Input },],
+        "text": [{ type: core.Input },],
+        "autoUpdateContent": [{ type: core.Input },],
+        "durationBeforeCallback": [{ type: core.Input },],
+    };
     return AceEditorComponent;
 }());
 
-var AceEditorModule = /** @class */ (function () {
+var list = [
+    AceEditorComponent,
+    AceEditorDirective
+];
+var AceEditorModule = (function () {
     function AceEditorModule() {
     }
+    AceEditorModule.decorators = [
+        { type: core.NgModule, args: [{
+                    declarations: list.slice(),
+                    imports: [],
+                    providers: [],
+                    exports: list
+                },] },
+    ];
+    /** @nocollapse */
+    AceEditorModule.ctorParameters = function () { return []; };
     return AceEditorModule;
 }());
 

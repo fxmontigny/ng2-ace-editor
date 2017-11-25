@@ -1,13 +1,1 @@
-{
-  "version": 3,
-  "file": "module.js",
-  "sourceRoot": "",
-  "sources": [
-    "../../src/module.ts"
-  ],
-  "names": [],
-  "mappings": "AAAA,OAAO,EAAC,QAAQ,EAAC,MAAM,eAAe,CAAC;AACvC,OAAO,EAAC,kBAAkB,EAAC,MAAM,aAAa,CAAC;AAC/C,OAAO,EAAC,kBAAkB,EAAC,MAAM,aAAa,CAAC;AAE/C,IAAM,IAAI,GAAG;IACT,kBAAkB;IAClB,kBAAkB;CACrB,CAAA;;;;0BAPD",
-  "sourcesContent": [
-    "import {NgModule} from \"@angular/core\";\r\nimport {AceEditorComponent} from \"./component\";\r\nimport {AceEditorDirective} from \"./directive\";\r\n\r\nconst list = [\r\n    AceEditorComponent,\r\n    AceEditorDirective\r\n]\r\n\r\n@NgModule({\r\n    declarations: [\r\n        ...list\r\n    ],\r\n    imports: [],\r\n    providers: [],\r\n    exports: list\r\n})\r\nexport class AceEditorModule {\r\n\r\n}\r\n"
-  ]
-}
+{"version":3,"file":"module.js","sourceRoot":"","sources":["../../src/module.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,QAAQ,EAAC,MAAM,eAAe,CAAC;AACvC,OAAO,EAAC,kBAAkB,EAAC,MAAM,aAAa,CAAC;AAC/C,OAAO,EAAC,kBAAkB,EAAC,MAAM,aAAa,CAAC;AAE/C,IAAM,IAAI,GAAG;IACT,kBAAkB;IAClB,kBAAkB;CACrB,CAAA;;;;;gBAEA,QAAQ,SAAC;oBACN,YAAY,EACL,IAAI,QACV;oBACD,OAAO,EAAE,EAAE;oBACX,SAAS,EAAE,EAAE;oBACb,OAAO,EAAE,IAAI;iBAChB;;;;0BAhBD;;SAiBa,eAAe","sourcesContent":["import {NgModule} from \"@angular/core\";\nimport {AceEditorComponent} from \"./component\";\nimport {AceEditorDirective} from \"./directive\";\n\nconst list = [\n    AceEditorComponent,\n    AceEditorDirective\n]\n\n@NgModule({\n    declarations: [\n        ...list\n    ],\n    imports: [],\n    providers: [],\n    exports: list\n})\nexport class AceEditorModule {\n\n}\n"]}

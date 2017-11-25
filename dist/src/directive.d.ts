@@ -1,4 +1,4 @@
-import {EventEmitter, ElementRef, OnInit} from "@angular/core";
+import { EventEmitter, ElementRef, OnInit } from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";

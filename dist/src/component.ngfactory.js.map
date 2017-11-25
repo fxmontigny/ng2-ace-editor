@@ -1,13 +1,1 @@
-{
-  "version": 3,
-  "file": "component.ngfactory.js",
-  "sourceRoot": "",
-  "sources": [
-    "../../src/component.ngfactory.ts"
-  ],
-  "names": [],
-  "mappings": "",
-  "sourcesContent": [
-    "import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"
-  ]
-}
+{"version":3,"file":"component.ngfactory.js","sourceRoot":"","sources":["../../src/component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}
