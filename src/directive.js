@@ -13,7 +13,8 @@ require('brace');
 require('brace/theme/monokai');
 require('brace/mode/html');
 var AceEditorDirective = (function () {
-    function AceEditorDirective(elementRef) {
+    function AceEditorDirective(elementRef, zone) {
+        this.zone = zone;
         this.textChanged = new core_1.EventEmitter();
         this.textChange = new core_1.EventEmitter();
         this._options = {};
@@ -24,7 +25,10 @@ var AceEditorDirective = (function () {
         this._durationBeforeCallback = 0;
         this._text = "";
         var el = elementRef.nativeElement;
-        this.editor = ace["edit"](el);
+        var that = this;
+        this.zone.runOutsideAngular(function() {
+            that.editor = ace["edit"](el);
+        });
         // }
         //ngOnInit() {
         this.init();

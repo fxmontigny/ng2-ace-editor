@@ -14,7 +14,8 @@ require('brace');
 require('brace/theme/monokai');
 require('brace/mode/html');
 var AceEditorComponent = (function () {
-    function AceEditorComponent(elementRef) {
+    function AceEditorComponent(elementRef, zone) {
+        this.zone = zone;
         this.textChanged = new core_1.EventEmitter();
         this.textChange = new core_1.EventEmitter();
         this.style = {};
@@ -30,7 +31,10 @@ var AceEditorComponent = (function () {
         this._onTouched = function () {
         };
         var el = elementRef.nativeElement;
-        this._editor = ace["edit"](el);
+        var that = this;
+        this.zone.runOutsideAngular(function() {
+            that._editor = ace["edit"](el);
+        });
         //}
         //ngOnInit() {
         this.init();

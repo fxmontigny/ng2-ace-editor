@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Output, ElementRef, Input, forwardRef, OnInit} from "@angular/core";
-import {NG_VALUE_ACCESSOR, ControlValueAccessor} from "@angular/forms";
+import { Component, EventEmitter, Output, ElementRef, Input, forwardRef, OnInit, OnDestroy, NgZone } from "@angular/core";
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
@@ -16,7 +16,7 @@ declare var ace: any;
         multi: true
     }]
 })
-export class AceEditorComponent implements ControlValueAccessor, OnInit {
+export class AceEditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
     @Output() textChanged = new EventEmitter();
     @Output() textChange = new EventEmitter();
     @Input() style: any = {};
@@ -31,15 +31,21 @@ export class AceEditorComponent implements ControlValueAccessor, OnInit {
     oldText: any;
     timeoutSaving: any;
 
-    constructor(elementRef: ElementRef) {
+    constructor(elementRef: ElementRef, private zone: NgZone) {
         let el = elementRef.nativeElement;
-        this._editor = ace["edit"](el);
+        this.zone.runOutsideAngular(() => {
+            this._editor = ace['edit'](el);
+        });
         this._editor.$blockScrolling = Infinity;
     }
 
     ngOnInit() {
         this.init();
         this.initEvents();
+    }
+
+    ngOnDestroy() {
+        this._editor.destroy();
     }
 
     init() {
@@ -61,8 +67,10 @@ export class AceEditorComponent implements ControlValueAccessor, OnInit {
         }
         if (!this._durationBeforeCallback) {
             this._text = newVal;
-            this.textChange.emit(newVal);
-            this.textChanged.emit(newVal);
+            this.zone.run(() => {
+                this.textChange.emit(newVal);
+                this.textChanged.emit(newVal);
+            });
             this._onChange(newVal);
         } else {
             if (this.timeoutSaving) {
@@ -71,8 +79,10 @@ export class AceEditorComponent implements ControlValueAccessor, OnInit {
 
             this.timeoutSaving = setTimeout(function () {
                 that._text = newVal;
-                that.textChange.emit(newVal);
-                that.textChanged.emit(newVal);
+                this.zone.run(() => {
+                    that.textChange.emit(newVal);
+                    that.textChanged.emit(newVal);
+                });
                 that.timeoutSaving = null;
             }, this._durationBeforeCallback);
         }

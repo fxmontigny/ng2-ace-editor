@@ -1,8 +1,9 @@
-import { EventEmitter, ElementRef, OnInit } from '@angular/core';
+import { EventEmitter, ElementRef, OnInit, OnDestroy, NgZone } from '@angular/core';
 import 'brace';
 import 'brace/theme/monokai';
 import 'brace/mode/html';
 export declare class AceEditorDirective implements OnInit {
+    private zone;
     textChanged: EventEmitter<{}>;
     textChange: EventEmitter<{}>;
     _options: any;
@@ -15,8 +16,9 @@ export declare class AceEditorDirective implements OnInit {
     editor: any;
     oldText: any;
     timeoutSaving: any;
-    constructor(elementRef: ElementRef);
+    constructor(elementRef: ElementRef, zone: NgZone);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     init(): void;
     initEvents(): void;
     updateText(): void;

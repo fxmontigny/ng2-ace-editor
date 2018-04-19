@@ -1,4 +1,4 @@
-import {Directive, EventEmitter, Output, ElementRef, Input, OnInit} from "@angular/core";
+import { Directive, EventEmitter, Output, ElementRef, Input, OnInit, OnDestroy, NgZone } from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
@@ -8,7 +8,7 @@ declare var ace: any;
 @Directive({
     selector: '[ace-editor]'
 })
-export class AceEditorDirective implements OnInit {
+export class AceEditorDirective implements OnInit, OnDestroy {
     @Output() textChanged = new EventEmitter();
     @Output() textChange = new EventEmitter();
     _options: any = {};
@@ -22,15 +22,21 @@ export class AceEditorDirective implements OnInit {
     oldText: any;
     timeoutSaving: any;
 
-    constructor(elementRef: ElementRef) {
+    constructor(elementRef: ElementRef, private zone: NgZone) {
         let el = elementRef.nativeElement;
-        this.editor = ace["edit"](el);
+        this.zone.runOutsideAngular(() => {
+            this.editor = ace["edit"](el);
+        });
         this.editor.$blockScrolling = Infinity;
     }
 
     ngOnInit() {
         this.init();
         this.initEvents();
+    }
+
+    ngOnDestroy() {
+        this.editor.destroy();
     }
 
     init() {
@@ -52,8 +58,10 @@ export class AceEditorDirective implements OnInit {
         }
         if (!this._durationBeforeCallback) {
             this._text = newVal;
-            this.textChange.emit(newVal);
-            this.textChanged.emit(newVal);
+            this.zone.run(() => {
+                this.textChange.emit(newVal);
+                this.textChanged.emit(newVal);
+            });
         } else {
             if (this.timeoutSaving != null) {
                 clearTimeout(this.timeoutSaving);
@@ -61,8 +69,10 @@ export class AceEditorDirective implements OnInit {
 
             this.timeoutSaving = setTimeout(function () {
                 that._text = newVal;
-                that.textChange.emit(newVal);
-                that.textChanged.emit(newVal);
+                this.zone.run(() => {
+                    that.textChange.emit(newVal);
+                    that.textChanged.emit(newVal);
+                });
                 that.timeoutSaving = null;
             }, this._durationBeforeCallback);
         }
