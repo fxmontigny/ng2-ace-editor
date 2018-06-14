@@ -31,6 +31,6 @@
     "brace": "^0.10.0"
   },
   "peerDependencies": {
-    "@angular/core": "^5.0.0"
+    "@angular/core": "^6.0.0"
   }
 }
