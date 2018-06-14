@@ -5,7 +5,7 @@ var list = [
     AceEditorComponent,
     AceEditorDirective
 ];
-var AceEditorModule = (function () {
+var AceEditorModule = /** @class */ (function () {
     function AceEditorModule() {
     }
     AceEditorModule.decorators = [

@@ -2,7 +2,7 @@ import { Directive, EventEmitter, Output, ElementRef, Input, NgZone } from "@ang
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
-var AceEditorDirective = (function () {
+var AceEditorDirective = /** @class */ (function () {
     function AceEditorDirective(elementRef, zone) {
         var _this = this;
         this.zone = zone;
@@ -160,19 +160,19 @@ var AceEditorDirective = (function () {
     ];
     /** @nocollapse */
     AceEditorDirective.ctorParameters = function () { return [
-        { type: ElementRef, },
-        { type: NgZone, },
+        { type: ElementRef },
+        { type: NgZone }
     ]; };
     AceEditorDirective.propDecorators = {
-        "textChanged": [{ type: Output },],
-        "textChange": [{ type: Output },],
-        "options": [{ type: Input },],
-        "readOnly": [{ type: Input },],
-        "theme": [{ type: Input },],
-        "mode": [{ type: Input },],
-        "text": [{ type: Input },],
-        "autoUpdateContent": [{ type: Input },],
-        "durationBeforeCallback": [{ type: Input },],
+        textChanged: [{ type: Output }],
+        textChange: [{ type: Output }],
+        options: [{ type: Input }],
+        readOnly: [{ type: Input }],
+        theme: [{ type: Input }],
+        mode: [{ type: Input }],
+        text: [{ type: Input }],
+        autoUpdateContent: [{ type: Input }],
+        durationBeforeCallback: [{ type: Input }]
     };
     return AceEditorDirective;
 }());

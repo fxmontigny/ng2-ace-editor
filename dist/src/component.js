@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
-var AceEditorComponent = (function () {
+var AceEditorComponent = /** @class */ (function () {
     function AceEditorComponent(elementRef, zone) {
         var _this = this;
         this.zone = zone;
@@ -200,21 +200,21 @@ var AceEditorComponent = (function () {
     ];
     /** @nocollapse */
     AceEditorComponent.ctorParameters = function () { return [
-        { type: ElementRef, },
-        { type: NgZone, },
+        { type: ElementRef },
+        { type: NgZone }
     ]; };
     AceEditorComponent.propDecorators = {
-        "textChanged": [{ type: Output },],
-        "textChange": [{ type: Output },],
-        "style": [{ type: Input },],
-        "options": [{ type: Input },],
-        "readOnly": [{ type: Input },],
-        "theme": [{ type: Input },],
-        "mode": [{ type: Input },],
-        "value": [{ type: Input },],
-        "text": [{ type: Input },],
-        "autoUpdateContent": [{ type: Input },],
-        "durationBeforeCallback": [{ type: Input },],
+        textChanged: [{ type: Output }],
+        textChange: [{ type: Output }],
+        style: [{ type: Input }],
+        options: [{ type: Input }],
+        readOnly: [{ type: Input }],
+        theme: [{ type: Input }],
+        mode: [{ type: Input }],
+        value: [{ type: Input }],
+        text: [{ type: Input }],
+        autoUpdateContent: [{ type: Input }],
+        durationBeforeCallback: [{ type: Input }]
     };
     return AceEditorComponent;
 }());
