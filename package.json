@@ -6,18 +6,18 @@
     "build": "npm run transpile && npm run package && npm run minify"
   },
   "devDependencies": {
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/forms": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "rollup": "^0.50.0",
+    "@angular/common": "^6.0.0",
+    "@angular/compiler": "^6.0.0",
+    "@angular/compiler-cli": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/forms": "^6.0.0",
+    "@angular/platform-browser": "^6.0.0",
+    "rollup": "^0.60.7",
     "rollup-plugin-angular": "^0.5.3",
-    "rollup-plugin-typescript2": "^0.8.2",
-    "rxjs": "^5.5.2",
-    "typescript": "~2.4.2",
-    "uglify-js": "^3.1.1",
-    "zone.js": "^0.8.17"
+    "rollup-plugin-typescript2": "^0.15.0",
+    "rxjs": "^6.2.0",
+    "typescript": "2.7.2",
+    "uglify-js": "^3.4.0",
+    "zone.js": "^0.8.26"
   }
 }

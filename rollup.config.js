@@ -5,13 +5,13 @@ export default {
     input: 'dist/index.js',
     output: {
         file: 'dist/bundles/ng2-ace-editor.umd.js',
-        format: 'umd'
-    },
-    sourceMap: false,
-    name: 'ng.ng2aceeditor',
-    globals: {
-        '@angular/core': 'ng.core',
-        '@angular/forms': 'ng.forms'
+        format: 'umd',
+        name: 'ng.ng2aceeditor',
+        sourcemap: false,
+        globals: {
+            '@angular/core': 'ng.core',
+            '@angular/forms': 'ng.forms'
+        }
     },
     external: [
         '@angular/core',
