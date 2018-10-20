@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Output, ElementRef, Input, NgZone } from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
-import "brace/mode/html";
+
 var AceEditorDirective = /** @class */ (function () {
     function AceEditorDirective(elementRef, zone) {
         var _this = this;

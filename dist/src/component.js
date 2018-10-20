@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, ElementRef, Input, forwardRef, NgZone 
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 import "brace";
 import "brace/theme/monokai";
-import "brace/mode/html";
+
 var AceEditorComponent = /** @class */ (function () {
     function AceEditorComponent(elementRef, zone) {
         var _this = this;

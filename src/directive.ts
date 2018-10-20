@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Output, ElementRef, Input, OnInit, OnDestroy, NgZone } from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
-import "brace/mode/html";
+
 
 declare var ace: any;
 

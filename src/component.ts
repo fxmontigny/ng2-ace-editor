@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output, ElementRef, Input, forwardRef, OnInit,
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 import "brace";
 import "brace/theme/monokai";
-import "brace/mode/html";
 
 declare var ace: any;
 
