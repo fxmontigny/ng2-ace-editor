@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component, EventEmitter, Output, ElementRef, Input, forwardRef, NgZone } from "@angular/core";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 import "brace";
-import "brace/theme/monokai";
+import "brace/theme/textmate";
 var AceEditorComponent = /** @class */ (function () {
     function AceEditorComponent(elementRef, zone) {
         var _this = this;
@@ -20,8 +20,8 @@ var AceEditorComponent = /** @class */ (function () {
         this.style = {};
         this._options = {};
         this._readOnly = false;
-        this._theme = "monokai";
-        this._mode = "html";
+        this._theme = "textmate";
+        this._mode = "xml";
         this._autoUpdateContent = true;
         this._durationBeforeCallback = 0;
         this._text = "";

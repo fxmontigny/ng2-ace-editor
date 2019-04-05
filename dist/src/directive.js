@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Directive, EventEmitter, Output, ElementRef, Input, NgZone } from "@angular/core";
 import "brace";
-import "brace/theme/monokai";
+import "brace/theme/textmate";
 var AceEditorDirective = /** @class */ (function () {
     function AceEditorDirective(elementRef, zone) {
         var _this = this;
@@ -18,8 +18,8 @@ var AceEditorDirective = /** @class */ (function () {
         this.textChange = new EventEmitter();
         this._options = {};
         this._readOnly = false;
-        this._theme = "monokai";
-        this._mode = "html";
+        this._theme = "textmate";
+        this._mode = "xml";
         this._autoUpdateContent = true;
         this._durationBeforeCallback = 0;
         this._text = "";

@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 require('brace');
-require('brace/theme/monokai');
-require('brace/mode/html');
+require('brace/theme/textmate');
+require('brace/mode/xml');
 var AceEditorDirective = (function () {
     function AceEditorDirective(elementRef, zone) {
         this.zone = zone;
@@ -19,8 +19,8 @@ var AceEditorDirective = (function () {
         this.textChange = new core_1.EventEmitter();
         this._options = {};
         this._readOnly = false;
-        this._theme = "monokai";
-        this._mode = "html";
+        this._theme = "textmate";
+        this._mode = "xml";
         this._autoUpdateContent = true;
         this._durationBeforeCallback = 0;
         this._text = "";

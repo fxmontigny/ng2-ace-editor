@@ -1,8 +1,9 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('brace'), require('brace/theme/monokai'), require('@angular/forms')) :
-    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'brace', 'brace/theme/monokai', '@angular/forms'], factory) :
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('brace'), require('brace/theme/textmate'), require('@angular/forms')) :
+    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'brace', 'brace/theme/textmate', '@angular/forms'], factory) :
     (global = global || self, factory((global.ng = global.ng || {}, global.ng.ng2aceeditor = {}), global.ng.core, null, null, global.ng.forms));
-}(this, function (exports, core, brace, monokai, forms) { 'use strict';
+}(this, function (exports, core, brace, textmate, forms) { 'use strict';
+
 
     var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -21,8 +22,8 @@
             this.textChange = new core.EventEmitter();
             this._options = {};
             this._readOnly = false;
-            this._theme = "monokai";
-            this._mode = "html";
+            this._theme = "textmate";
+            this._mode = "xml";
             this._autoUpdateContent = true;
             this._durationBeforeCallback = 0;
             this._text = "";
@@ -234,8 +235,8 @@
             this.style = {};
             this._options = {};
             this._readOnly = false;
-            this._theme = "monokai";
-            this._mode = "html";
+            this._theme = "textmate";
+            this._mode = "xml";
             this._autoUpdateContent = true;
             this._durationBeforeCallback = 0;
             this._text = "";

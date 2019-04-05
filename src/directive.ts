@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, Output, ElementRef, Input, OnInit, OnDestroy, NgZone } from "@angular/core";
 import "brace";
-import "brace/theme/monokai";
+import "brace/theme/textmate";
 
 
 declare var ace: any;
@@ -13,8 +13,8 @@ export class AceEditorDirective implements OnInit, OnDestroy {
     @Output() textChange = new EventEmitter();
     _options: any = {};
     _readOnly: boolean = false;
-    _theme: string = "monokai";
-    _mode: any = "html";
+    _theme: string = "textmate";
+    _mode: any = "xml";
     _autoUpdateContent: boolean = true;
     _durationBeforeCallback: number = 0;
     _text: string = "";
