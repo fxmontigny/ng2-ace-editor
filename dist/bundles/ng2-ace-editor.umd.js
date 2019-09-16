@@ -502,8 +502,8 @@
         return AceEditorModule;
     }());
 
-    exports.AceEditorDirective = AceEditorDirective;
     exports.AceEditorComponent = AceEditorComponent;
+    exports.AceEditorDirective = AceEditorDirective;
     exports.AceEditorModule = AceEditorModule;
 
     Object.defineProperty(exports, '__esModule', { value: true });

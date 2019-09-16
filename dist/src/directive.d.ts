@@ -3,8 +3,8 @@ import "brace";
 import "brace/theme/monokai";
 export declare class AceEditorDirective implements OnInit, OnDestroy {
     private zone;
-    textChanged: EventEmitter<{}>;
-    textChange: EventEmitter<{}>;
+    textChanged: EventEmitter<any>;
+    textChange: EventEmitter<any>;
     _options: any;
     _readOnly: boolean;
     _theme: string;
