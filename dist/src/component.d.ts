@@ -4,8 +4,8 @@ import "brace";
 import "brace/theme/monokai";
 export declare class AceEditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
     private zone;
-    textChanged: EventEmitter<{}>;
-    textChange: EventEmitter<{}>;
+    textChanged: EventEmitter<any>;
+    textChange: EventEmitter<any>;
     style: any;
     _options: any;
     _readOnly: boolean;
