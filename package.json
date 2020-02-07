@@ -1,23 +1,51 @@
 {
-	"scripts": {
-		"transpile": "ngc",
-		"package": "rollup -c",
-		"minify": "uglifyjs dist/bundles/ng2-ace-editor.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng2-ace-editor.umd.min.js",
-		"build": "npm run transpile && npm run package && npm run minify"
-	},
-	"devDependencies": {
-		"@angular/common": "^7.0.0",
-		"@angular/compiler": "^7.0.0",
-		"@angular/compiler-cli": "^7.0.0",
-		"@angular/core": "^7.0.0",
-		"@angular/forms": "^7.0.0",
-		"@angular/platform-browser": "^7.0.0",
-		"rollup": "^1.1.0",
-		"rollup-plugin-angular": "^0.5.3",
-		"rollup-plugin-typescript2": "^0.19.0",
-		"rxjs": "^6.3.3",
-		"typescript": "^3.2.2",
-		"uglify-js": "^3.4.9",
-		"zone.js": "^0.8.27"
-	}
+  "name": "angular-ace-editor",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng build ng2-ace-editor && ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~9.0.0",
+    "@angular/common": "~9.0.0",
+    "@angular/compiler": "~9.0.0",
+    "@angular/core": "~9.0.0",
+    "@angular/forms": "~9.0.0",
+    "@angular/platform-browser": "~9.0.0",
+    "@angular/platform-browser-dynamic": "~9.0.0",
+    "@angular/router": "~9.0.0",
+    "ace-builds": "^1.4.8",
+    "brace": "^0.11.1",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900.1",
+    "@angular-devkit/build-ng-packagr": "~0.900.1",
+    "@angular/cli": "~9.0.1",
+    "@angular/compiler-cli": "~9.0.0",
+    "@angular/language-service": "~9.0.0",
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "ng-packagr": "^9.0.0",
+    "protractor": "~5.4.3",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~3.7.5"
+  }
 }

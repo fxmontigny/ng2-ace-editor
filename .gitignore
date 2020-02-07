@@ -1,26 +1,48 @@
-# Logs
-logs
-*.log
-npm-debug.log*
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Dependency directory
+# compiled output
+dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
 node_modules
 
-# Optional npm cache directory
-.npm
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
-# typescript
-typings
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# OS
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
 .DS_Store
-.idea/
-*.lock
-
-# Project
-*.ngsummary.json
-*.ngfactory.ts
-src/*.d.ts
-src/*.js
-.rpt2_cache
-.angulardoc.json
+Thumbs.db
+.npmrc
