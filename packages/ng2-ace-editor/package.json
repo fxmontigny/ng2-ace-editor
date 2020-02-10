@@ -1,5 +1,5 @@
 {
-  "name": "@pat/ng2-ace-editor",
+  "name": "ng2-ace-editor",
   "version": "0.3.9",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
